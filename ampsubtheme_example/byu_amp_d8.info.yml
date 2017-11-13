@@ -1,0 +1,12 @@
+name: BYU AMP Subtheme
+type: theme
+base theme: amptheme
+description: AMP subtheme for BYU. Brand compliant.
+package: Custom
+regions:
+  header: Header
+  content: Content
+  footer: Footer
+version: '8.x-1.0'
+core: '8.x'
+

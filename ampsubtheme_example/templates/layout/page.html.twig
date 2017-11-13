@@ -1,0 +1,153 @@
+{#
+/**
+ * @file
+ * Theme override to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template in this directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ *
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - messages: Status and error messages. Should be displayed prominently.
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.primary_menu: Items for the primary menu region.
+ * - page.secondary_menu: Items for the secondary menu region.
+ * - page.highlighted: Items for the highlighted content region.
+ * - page.help: Dynamic help text, mostly for admin pages.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.footer: Items for the footer region.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ *
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+
+<header class="byu-header">
+  <div class="byu-header-content-primary">
+    <span class="byu-site-title">BYU News</span>
+  </div>
+  <div class="byu-header-content-secondary">
+    <div class="byu-header-actions">
+      <a href="/contact-us">Contact Us</a>
+    </div>
+    <div class="byu-search-form">
+      <div class="byu-search-container">
+        <input type="search" placeholder="Search" class="byu-search-input" title="Search">
+      </div>
+      <button class="byu-search-button" type="submit">
+        <amp-img
+            src="https://cdn.byu.edu/shared-icons/latest/fontawesome/search-white.svg"
+            alt="Run Search"
+            width="17px"
+            height="17px">
+        </amp-img>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="page-content">
+  {{ page.content }}
+</div>
+
+<footer class="byu-footer">
+  <div class="byu-footer-gray">
+    <div class="byu-footer-gray-content">
+
+      <div class="byu-footer-column">
+        <div class="byu-footer-column-header">
+          Contact
+        </div>
+        <p>
+          BYU University Communications
+          <br> Provo, Utah 84602
+          <br> 801-422-4511
+        </p>
+        <div class="byu-footer-action-button">
+          <a href="/user-story">Submit Story Idea</a>
+        </div>
+      </div>
+
+      <div class="byu-footer-column">
+        <div class="byu-footer-column-header">
+          News Categories
+        </div>
+        <p>
+          <a href="/category/faith">Faith</a><br><br>
+          <a href="/category/intellect">Intellect</a><br><br>
+          <a href="/category/character">Character</a><br><br>
+          <a href="/category/events">Events</a><br><br>
+          <a href="/category/announcements">Announcements</a><br><br>
+        </p>
+      </div>
+
+      <div class="byu-footer-column">
+        <div class="byu-footer-column-header">
+          Contact
+        </div>
+        <p>
+          BYU University Communications
+          <br> Provo, Utah 84602
+          <br> 801-422-4511
+        </p>
+      </div>
+
+      <div class="byu-footer-column">
+        <div class="byu-footer-column-header">
+          Contact
+        </div>
+        <p>
+          BYU University Communications
+          <br> Provo, Utah 84602
+          <br> 801-422-4511
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="byu-footer-blue">
+    <div class="byu-footer-university-name">
+      <a href="https://home.byu.edu/home/" target="_blank">
+        <amp-img
+            src="https://cdn.byu.edu/shared-icons/latest/logos/word-mark-wide-white.svg"
+            width="450px"
+            height="40px"
+            alt="Brigham Young University"
+            class="university-logo">
+        </amp-img>
+      </a>
+    </div>
+    <div class="byu-footer-university-info">
+      <span class="byu-info-text">©
+        <span id="currentYear">2017</span> All Rights Reserved
+      </span>
+      <span class="byu-info-text">Provo, UT 84602, USA</span>
+      <span class="byu-info-text">
+        <a class="contact-phone" href="tel:18014224636">801-422-4636</a>
+      </span>
+    </div>
+  </div>
+</footer>
