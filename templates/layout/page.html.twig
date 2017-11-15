@@ -46,16 +46,25 @@
 
 <header class="byu-header">
   <div class="byu-header-content-primary">
-    <span class="byu-site-title">BYU News</span>
+    <span class="byu-site-title"><a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a></span>
   </div>
   <div class="byu-header-content-secondary">
-    <div class="byu-header-actions">
-      <a href="/contact-us">Contact Us</a>
-    </div>
-    <div class="byu-search-form">
-      <div class="byu-search-container">
-        <input type="search" placeholder="Search" class="byu-search-input" title="Search">
+    {% if page.header_actions %}
+      <div class="byu-header-actions">
+        {{ page.header_actions }}
       </div>
+    {% endif %}
+    {# {% if search_use == TRUE %}
+      <div class="byu-search-form">
+        <form class="byu-search-container" target="_blank" method="get" action="#">
+          {{ page.search }}
+        </form>
+      </div>
+    {% endif %} #}
+    <div class="byu-search-form">
+      <form class="byu-search-container">
+        <input type="search" placeholder="Search" class="byu-search-input" title="Search">
+      </form>
       <button class="byu-search-button" type="submit">
         <amp-img
             src="https://cdn.byu.edu/shared-icons/latest/fontawesome/search-white.svg"
@@ -68,64 +77,20 @@
   </div>
 </header>
 
-<div class="page-content">
-  {{ page.content }}
-</div>
+
+  <div class="main-top {{ hero_width }} {{ hero_image_width }} {%  if hero_width == 'custom-width' %} {%  if custom_width %} " style="width: {{ custom_width }}px{% endif %} {% endif %}">
+    {% if page.slide_show %}
+      {{ page.slide_show }}
+    {% endif %}
+    <div class="page-content">
+      {{ page.content }}
+    </div>
+  </div>
+
 
 <footer class="byu-footer">
   <div class="byu-footer-gray">
-    <div class="byu-footer-gray-content">
-
-      <div class="byu-footer-column">
-        <div class="byu-footer-column-header">
-          Contact
-        </div>
-        <p>
-          BYU University Communications
-          <br> Provo, Utah 84602
-          <br> 801-422-4511
-        </p>
-        <div class="byu-footer-action-button">
-          <a href="/user-story">Submit Story Idea</a>
-        </div>
-      </div>
-
-      <div class="byu-footer-column">
-        <div class="byu-footer-column-header">
-          News Categories
-        </div>
-        <p>
-          <a href="/category/faith">Faith</a><br><br>
-          <a href="/category/intellect">Intellect</a><br><br>
-          <a href="/category/character">Character</a><br><br>
-          <a href="/category/events">Events</a><br><br>
-          <a href="/category/announcements">Announcements</a><br><br>
-        </p>
-      </div>
-
-      <div class="byu-footer-column">
-        <div class="byu-footer-column-header">
-          Contact
-        </div>
-        <p>
-          BYU University Communications
-          <br> Provo, Utah 84602
-          <br> 801-422-4511
-        </p>
-      </div>
-
-      <div class="byu-footer-column">
-        <div class="byu-footer-column-header">
-          Contact
-        </div>
-        <p>
-          BYU University Communications
-          <br> Provo, Utah 84602
-          <br> 801-422-4511
-        </p>
-      </div>
-
-    </div>
+    {{ page.footer }}
   </div>
 
   <div class="byu-footer-blue">

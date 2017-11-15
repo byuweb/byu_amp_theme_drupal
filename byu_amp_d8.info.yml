@@ -5,6 +5,9 @@ description: AMP subtheme for BYU. Brand compliant.
 package: Custom
 regions:
   header: Header
+  header_actions: Header Actions
+  search: Search
+  slide_show: Hero Image
   content: Content
   footer: Footer
 version: '8.x-1.0'

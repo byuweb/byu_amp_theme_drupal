@@ -6,6 +6,45 @@
  * Example of a preprocess hook for a subtheme that could be used to change
  * variables in templates in order to support custom styling of AMP pages.
  */
-function ampsubtheme_example_preprocess_html(&$variables) {
+function byu_amp_d8_preprocess_html(&$variables) {
 
+}
+
+/**
+ * Implements hook_preprocess_page()
+ *
+ * @param $variables
+ */
+function byu_amp_d8_preprocess_page(&$variables) {
+  // Load the site name out of configuration.
+  $config = \Drupal::config('system.site');
+  $variables['site_name'] = $config->get('name');
+
+  // search
+  $variables['search_use'] = theme_get_setting('search_use');
+
+  // hero
+  $hero_setting = theme_get_setting('hero_width');
+  if($hero_setting == '0') {
+    $variables['hero_width'] = 'full-width';
+  } else {
+    $variables['hero_width'] = 'custom-width';
+  }
+
+  $hero_image_setting = theme_get_setting('hero_image_width');
+  if($hero_image_setting == '0') {
+    $variables['hero_image_width'] = '';
+  } else {
+    $variables['hero_image_width'] = 'full-width-images';
+  }
+
+  $hero_behind_setting = theme_get_setting('hero_vs_menu');
+  if($hero_behind_setting == '0') {
+    $variables['hero_vs_menu'] = 'hero-below-menu';
+  } else {
+    $variables['hero_vs_menu'] = 'hero-behind-menu';
+  }
+
+  // general page settings
+  $variables['full_width'] = theme_get_setting('full_width');
 }
