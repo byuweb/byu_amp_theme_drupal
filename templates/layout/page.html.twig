@@ -47,6 +47,7 @@
 <header class="byu-header">
   <div class="byu-header-content-primary">
     <span class="byu-site-title"><a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a></span>
+    <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
   </div>
   <div class="byu-header-content-secondary">
     {% if page.header_actions %}
@@ -71,6 +72,14 @@
     {% endif %}
   </div>
 </header>
+<amp-sidebar id="sidebar1" layout="nodisplay" side="left">
+  <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+  <ul class="sidebar">
+    {% if page.primary_menu %}
+      {{ page.primary_menu }}
+    {% endif %}
+  </ul>
+</amp-sidebar>
 
 
   <div class="main-top {{ hero_width }} {{ hero_image_width }} {%  if hero_width == 'custom-width' %} {%  if custom_width %} " style="width: {{ custom_width }}px{% endif %} {% endif %}">
@@ -95,6 +104,7 @@
             src="https://cdn.byu.edu/shared-icons/latest/logos/word-mark-wide-white.svg"
             width="450px"
             height="40px"
+            layout="responsive"
             alt="Brigham Young University"
             class="university-logo">
         </amp-img>
