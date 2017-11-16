@@ -54,26 +54,21 @@
         {{ page.header_actions }}
       </div>
     {% endif %}
-    {# {% if search_use == TRUE %}
+    {% if search_use == TRUE %}
       <div class="byu-search-form">
-        <form class="byu-search-container" target="_blank" method="get" action="#">
-          {{ page.search }}
+        <form class="byu-search-container" method="post" target="_blank" action-xhr="#">
+          <input type="search" placeholder="Search" class="byu-search-input" title="Search">
         </form>
+        <button class="byu-search-button" type="submit">
+          <amp-img
+              src="https://cdn.byu.edu/shared-icons/latest/fontawesome/search-white.svg"
+              alt="Run Search"
+              width="17px"
+              height="17px">
+          </amp-img>
+        </button>
       </div>
-    {% endif %} #}
-    <div class="byu-search-form">
-      <form class="byu-search-container">
-        <input type="search" placeholder="Search" class="byu-search-input" title="Search">
-      </form>
-      <button class="byu-search-button" type="submit">
-        <amp-img
-            src="https://cdn.byu.edu/shared-icons/latest/fontawesome/search-white.svg"
-            alt="Run Search"
-            width="17px"
-            height="17px">
-        </amp-img>
-      </button>
-    </div>
+    {% endif %}
   </div>
 </header>
 

@@ -1,3 +1,5 @@
+/*This file is for sytax checking and editing. It is not read by the theme."
+
 /*--- GENERAL ---*/
 html, body {
 margin: 0;
@@ -13,25 +15,31 @@ margin: 0 auto;
 }
 /*--- HEADER ---*/
 .byu-header {
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
+width: 100%;
+font-family: Gotham A,Gotham B,Helvetica,sans-serif;
+font-size: 18px;
+display: block;
+margin: 0;
+padding: 0;
+max-width: 100%;
 justify-content: center;
-align-items: center;
-background-color: #002e5d;
-color: #fff;
-height: 55px;
+flex: 1;
+flex-basis: 100%;
+box-sizing: border-box;
+line-height: 34px;
 }
 .byu-header-content-primary {
+background-color: #002e5d;
+color: #fff;
 display: flex;
 flex-direction: row;
 flex-wrap: nowrap;
 justify-content: space-between;
-align-items: center;
 flex: 1;
-min-height: 55px;
 box-sizing: border-box;
-padding-left: 16px;
+min-height: 34px;
+padding: 10px 16px;
+align-items: baseline;
 }
 .byu-site-title {
 overflow: hidden;
@@ -47,12 +55,8 @@ color: #fff;
 text-decoration: none;
 }
 .byu-header-content-secondary {
-display: flex;
-flex-direction: row;
-flex-wrap: nowrap;
-justify-content: space-between;
-align-items: center;
-padding-right: 16px;
+line-height: 24px;
+font-size: 18px;
 }
 .byu-header-actions {
 text-decoration: none;
@@ -65,37 +69,45 @@ color: #fff;
 text-decoration: none;
 }
 .byu-search-form {
+max-height: 35px;
+transition: max-height .5s cubic-bezier(.4,0,.2,1),transform .5s cubic-bezier(.4,0,.2,1);
+will-change: max-height,transform;
+overflow: hidden;
+transform: scale(1);
+transform-origin: top;
 display: flex;
 align-items: stretch;
 align-content: center;
-width: 216px;
-margin-left: 20px;
+width: auto
 }
 .byu-search-container {
-flex: 1;
+flex: 1
 }
 .byu-search-input {
-padding: 5px 10px;
 border: none;
-height: 30px;
 -webkit-appearance: none;
 border-radius: 0;
 margin: 0;
 box-sizing: border-box;
+font-family: Gotham A,Gotham B,Helvetica,sans-serif!important;
 font-size: 13px;
 font-weight: 500;
 color: #002e5d;
+padding: 5px 10px 5px 16px;
 width: 100%;
+height: 35px;
+border-bottom: 1px solid #c5c5c5;
 }
 .byu-search-button {
 background-color: #666;
 border: 1px solid #666;
 color: #fff;
-width: 30px;
-height: 30px;
+width: 53px;
+height: 35px;
 display: flex;
 align-items: center;
 box-sizing: border-box;
+padding: 0 16px;
 }
 .byu-search-button img {
 width: 17px;
@@ -206,147 +218,144 @@ margin: 0 20px;
 /* ---------- Utility classes ----------- */
 
 .hidden {
-  display: none;
+display: none;
 }
 
 .visually-hidden {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-  word-wrap: normal;
+position: absolute;
+clip: rect(1px, 1px, 1px, 1px);
+overflow: hidden;
+height: 1px;
+width: 1px;
+word-wrap: normal;
 }
 
 .visually-hidden.focusable:active,
 .visually-hidden.focusable:focus {
-  position: static;
-  clip: auto;
-  overflow: visible;
-  height: auto;
-  width: auto;
+position: static;
+clip: auto;
+overflow: visible;
+height: auto;
+width: auto;
 }
 
 .invisible {
-  visibility: hidden;
+visibility: hidden;
 }
 
 .clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+content: "";
+display: table;
+clear: both;
 }
 
 /* ---------- Skip Link ----------- */
 
 .amp-skip-link {
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 50;
-  background: #444;
-  background: rgba(0, 0, 0, 0.6);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.94em;
-  line-height: 1.7em;
-  padding: 1px 10px 2px;
-  border-radius: 0 0 10px 10px;
-  border-bottom-width: 0;
-  outline: 0;
+left: 50%;
+-webkit-transform: translateX(-50%);
+-ms-transform: translateX(-50%);
+transform: translateX(-50%);
+z-index: 50;
+background: #444;
+background: rgba(0, 0, 0, 0.6);
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 0.94em;
+line-height: 1.7em;
+padding: 1px 10px 2px;
+border-radius: 0 0 10px 10px;
+border-bottom-width: 0;
+outline: 0;
 }
 
 .amp-skip-link.visually-hidden.focusable:focus {
-  position: absolute;
-  color: #fff;
+position: absolute;
+color: #fff;
 }
 
 /* ---------- Messages ----------- */
 
 .messages__wrapper {
-  padding: 20px 0 5px 8px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: 8px 0;
+padding: 20px 0 5px 8px;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+margin: 8px 0;
 }
 
 [dir="rtl"] .messages__wrapper {
-  padding: 20px 8px 5px 0;
+padding: 20px 8px 5px 0;
 }
 
 .messages {
-  background: no-repeat 10px 17px;  /* LTR */
-  border: 1px solid;
-  border-width: 1px 1px 1px 0;  /* LTR */
-  border-radius: 2px;
-  padding: 15px 20px 15px 35px; /* LTR */
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+background: no-repeat 10px 17px;  /* LTR */
+border: 1px solid;
+border-width: 1px 1px 1px 0;  /* LTR */
+border-radius: 2px;
+padding: 15px 20px 15px 35px; /* LTR */
+word-wrap: break-word;
+overflow-wrap: break-word;
 }
 
 [dir="rtl"] .messages {
-  border-width: 1px 0 1px 1px;
-  background-position: right 10px top 17px;
-  padding-left: 20px;
-  padding-right: 35px;
-  text-align: right;
+border-width: 1px 0 1px 1px;
+background-position: right 10px top 17px;
+padding-left: 20px;
+padding-right: 35px;
+text-align: right;
 }
 .messages + .messages {
-  margin-top: 1.538em;
+margin-top: 1.538em;
 }
 
 .messages__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+list-style: none;
+padding: 0;
+margin: 0;
 }
 
 .messages__item + .messages__item {
-  margin-top: 0.769em;
+margin-top: 0.769em;
 }
 
 /* See .color-success in Seven's colors.css */
 .messages--status {
-  color: #325e1c;
-  background-color: #f3faef;
-  border-color: #c9e1bd #c9e1bd #c9e1bd transparent;  /* LTR */
-  background-image: url(../../../../../../core/misc/icons/73b355/check.svg);
-  box-shadow: -8px 0 0 #77b259; /* LTR */
+color: #325e1c;
+border-color: #c9e1bd #c9e1bd #c9e1bd transparent;  /* LTR */
+background: #f3faef url(../../../../../core/misc/icons/73b355/check.svg);
+box-shadow: -8px 0 0 #77b259; /* LTR */
 }
 
 [dir="rtl"] .messages--status {
-  border-color: #c9e1bd transparent #c9e1bd #c9e1bd;
-  box-shadow: 8px 0 0 #77b259;
-  margin-left: 0;
+border-color: #c9e1bd transparent #c9e1bd #c9e1bd;
+box-shadow: 8px 0 0 #77b259;
+margin-left: 0;
 }
 
 /* See .color-warning in Seven's colors.css */
 .messages--warning {
-  background-color: #fdf8ed;
-  background-image: url(../../../../../../core/misc/icons/e29700/warning.svg);
-  border-color: #f4daa6 #f4daa6 #f4daa6 transparent;  /* LTR */
-  color: #734c00;
-  box-shadow: -8px 0 0 #e09600; /* LTR */
+background: #fdf8ed url(../../../../../core/misc/icons/e29700/warning.svg);
+border-color: #f4daa6 #f4daa6 #f4daa6 transparent;  /* LTR */
+color: #734c00;
+box-shadow: -8px 0 0 #e09600; /* LTR */
 }
 
 [dir="rtl"] .messages--warning {
-  border-color: #f4daa6 transparent #f4daa6 #f4daa6;
-  box-shadow: 8px 0 0 #e09600;
+border-color: #f4daa6 transparent #f4daa6 #f4daa6;
+box-shadow: 8px 0 0 #e09600;
 }
 
 /* See .color-error in Seven's colors.css */
 .messages--error {
-  background-color: #fcf4f2;
-  color: #a51b00;
-  background-image: url(../../../../../../core/misc/icons/e32700/error.svg);
-  border-color: #f9c9bf #f9c9bf #f9c9bf transparent;  /* LTR */
-  box-shadow: -8px 0 0 #e62600; /* LTR */
+color: #a51b00;
+background: #fcf4f2 url(../../../../../core/misc/icons/e32700/error.svg);
+border-color: #f9c9bf #f9c9bf #f9c9bf transparent;  /* LTR */
+box-shadow: -8px 0 0 #e62600; /* LTR */
 }
 
 [dir="rtl"] .messages--error {
-  border-color: #f9c9bf transparent #f9c9bf #f9c9bf;
-  box-shadow: 8px 0 0 #e62600;
+border-color: #f9c9bf transparent #f9c9bf #f9c9bf;
+box-shadow: 8px 0 0 #e62600;
 }
 
 .messages--error p.error {
-  color: #a51b00;
+color: #a51b00;
 }
