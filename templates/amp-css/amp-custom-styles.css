@@ -4,6 +4,10 @@ html, body {
   font-family: "Ringside Narrow A", "Ringside Narrow B", Helvetica, sans-serif;
   color: #141414;
 }
+h1 {
+  font-family: "Sentinel A", "Sentinel B", Times, serif;
+  color: #002E5D;
+}
 div {
   display: block;
 }
@@ -14,6 +18,13 @@ div {
 }
 img {
   padding: 8px;
+}
+a {
+  color: #0057B8;
+  text-decoration: none;
+}
+a:hover {
+  color: #002E5D;
 }
 /*-- SIDEBAR --*/
 amp-sidebar {
@@ -246,6 +257,74 @@ amp-sidebar {
   color: #fff;
   text-decoration: none;
   margin: 0 20px;
+}
+
+/* ----- AMP Story ----- */
+div.amp-story-writer div:first-child {
+   font-weight: 500;
+ }
+div.amp-story-photos div:first-child {
+  font-weight: 700;
+  font-family: "Sentinel A", "Sentinel B", Times, serif;
+  text-align: center;
+  background-color: #F2F2F2;
+  font-size: 1.5em;
+  color: #002E5D;
+  margin: 8px 0;
+  padding: 8px 0;
+}
+div.amp-story-recent-stories > div:first-child {
+  font-weight: 700;
+  font-family: "Sentinel A", "Sentinel B", Times, serif;
+  text-align: center;
+  background-color: #F2F2F2;
+  font-size: 1.5em;
+  color: #002E5D;
+  margin: 8px 0;
+  padding: 8px 0;
+}
+div.amp-story-recent-stories > div:nth-child(2) > div {
+  padding: 8px 0;
+  border-bottom: 1px solid #f2f2f2;
+}
+div.amp-story-recent-stories > div:nth-child(2) > div a {
+  color: #002E5D;
+  font-family: "Sentinel A", "Sentinel B", Times, serif;
+  font-size: 1em;
+}
+
+div.amp-story-media-placements > div:first-child {
+  font-weight: 700;
+  font-family: "Sentinel A", "Sentinel B", Times, serif;
+  text-align: center;
+  background-color: #F2F2F2;
+  font-size: 1.5em;
+  color: #002E5D;
+  margin: 8px 0;
+  padding: 8px 0;
+}
+
+div.amp-story-media-placements > div:nth-child(2) a {
+  color: #002E5D;
+  text-decoration: none;
+  font-size: 1.25em;
+  font-weight: 500;
+  padding-bottom: 8px;
+  margin-left: 16px;
+}
+
+div.amp-story-tags > div:first-child {
+  font-weight: 600;
+}
+
+div.amp-story-story-highlights {
+  border-top: 1px solid #F2F2F2;
+  border-bottom: 1px solid #F2F2F2;
+  margin-top: 8px;
+}
+
+div.amp-story-subtitle {
+  font-weight: 600;
 }
 
 /* ---------- Utility classes ----------- */
