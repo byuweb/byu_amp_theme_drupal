@@ -6,7 +6,7 @@
  * Example of a preprocess hook for a subtheme that could be used to change
  * variables in templates in order to support custom styling of AMP pages.
  */
-function byu_amp_d8_preprocess_html(&$variables) {
+function byu_amp_theme_preprocess_html(&$variables) {
 
 }
 
@@ -15,7 +15,7 @@ function byu_amp_d8_preprocess_html(&$variables) {
  *
  * @param $variables
  */
-function byu_amp_d8_preprocess_page(&$variables) {
+function byu_amp_theme_preprocess_page(&$variables) {
   // Load the site name out of configuration.
   $config = \Drupal::config('system.site');
   $variables['site_name'] = $config->get('name');

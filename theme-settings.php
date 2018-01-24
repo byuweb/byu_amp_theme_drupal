@@ -4,7 +4,7 @@ use Drupal\Core\Theme\ThemeSettings;
 use Drupal\system\Form\ThemeSettingsForm;
 use Drupal\Core\Form;
 
-function byu_amp_d8_form_system_theme_settings_alter(&$form, Drupal\Core\Form\FormStateInterface $form_state) {
+function byu_amp_theme_form_system_theme_settings_alter(&$form, Drupal\Core\Form\FormStateInterface $form_state) {
 
 // Search Settings
 
